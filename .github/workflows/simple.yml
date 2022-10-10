@@ -13,4 +13,4 @@ jobs:
           node -v
           npm -v
           echo "Halo Part 4"
-          ls -anil
+          ls -anil /etc
