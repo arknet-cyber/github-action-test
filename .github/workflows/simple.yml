@@ -13,3 +13,4 @@ jobs:
           node -v
           npm -v
           echo "Halo Part 4"
+          eccho "Halo Part 5"
