@@ -2,10 +2,13 @@ name: Actions Workflow
 
 # instead of having multiple action on array we can add them as an object on: [push, pull_request]
 on:
+# Repository_dispatch can be triggered manually when we send a post request to some URL
+  repository_dispatch:
+    types: [build]
 # In order to trigger a job on schedule we need to use a cron schedule expression
-  schedule:
-    - cron: "0/2 * * * *"
-    - cron: "0/3 * * * *"
+  # schedule:
+  #   - cron: "0/2 * * * *"
+  #   - cron: "0/3 * * * *"
   # push:
   pull_request:
     types: [closed, assigned, opened, reopened]
