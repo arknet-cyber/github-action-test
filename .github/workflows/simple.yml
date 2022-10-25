@@ -16,6 +16,7 @@ jobs:
         run: |
           import platform
           print(platform.processor())
+          print("Hello Moto")
         shell: python
   run-windows-commands:
     runs-on: windows-latest
