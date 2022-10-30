@@ -8,6 +8,25 @@ jobs:
     permissions:
       issues: write
     steps:
+      # will create a new step to use a random number in our job
+      - name: Push a random file
+        run: |
+          pwd
+          ls -a
+          git init
+          git remote add origin "https://$GITHUB_ACTOR:{{ secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
+          git config --global user.email "git-bot@arknet.uk"
+          git config --global user.name "git-bot"
+          git fetch
+          git checkout master
+          git branch --set-upstream-to=origin/master
+          git pull
+          ls -anil
+          echo $RANDOM >> random.txt
+          ls -anil
+          git add -A
+          git commit -m "Random file"
+          git push
       - name: Create issue using REST API
         run: |
           curl --request POST \
