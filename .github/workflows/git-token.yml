@@ -3,10 +3,8 @@ on: push
 env:
   WF_ENV: Available to all jobs
 jobs:
-  create_issue:
+  create-issue:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
     steps:
       # will create a new step to use a random number in our job
       - name: Push a random file
